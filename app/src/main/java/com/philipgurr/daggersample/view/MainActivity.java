@@ -11,7 +11,7 @@ import com.philipgurr.daggersample.presenter.MainPresenter;
 import butterknife.BindView;
 import butterknife.OnClick;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View {
     MainPresenter presenter;
 
     @BindView(R.id.random_string) TextView tvRandomString;
@@ -26,5 +26,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
+
+    @Override
+    public void setRandomString(String text) {
+        btChangeText.setText(text);
     }
 }

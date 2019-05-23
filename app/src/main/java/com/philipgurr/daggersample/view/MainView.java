@@ -1,5 +1,5 @@
 package com.philipgurr.daggersample.view;
 
-public interface View {
+public interface MainView {
     void setRandomString(String text);
 }

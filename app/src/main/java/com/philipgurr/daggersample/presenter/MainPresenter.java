@@ -1,16 +1,23 @@
 package com.philipgurr.daggersample.presenter;
 
 import com.philipgurr.daggersample.model.RandomStringGenerator;
-import com.philipgurr.daggersample.view.View;
+import com.philipgurr.daggersample.view.MainView;
+
+import javax.inject.Inject;
 
 public class MainPresenter {
-    private static final String[] CHOICES = new String[] {"Dummy1", "Dummy2", "Dummy3"};
+    private MainView mainView;
+    private RandomStringGenerator model;
 
-    View view;
+    @Inject
+    public MainPresenter(MainView mainView, RandomStringGenerator model) {
+        this.mainView = mainView;
+        this.model = model;
+    }
 
     public void onChangeTextClick() {
-        view.setRandomString(
-                RandomStringGenerator.generateRandomString(CHOICES)
+        mainView.setRandomString(
+                model.generateRandomString()
         );
     }
 }

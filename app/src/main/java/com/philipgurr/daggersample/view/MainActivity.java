@@ -22,7 +22,16 @@ public class MainActivity extends AppCompatActivity implements MainView {
 
     @BindView(R.id.random_string) TextView tvRandomString;
     @BindView(R.id.change_text) Button btChangeText;
+    @BindView(R.id.open_fragment) Button btOpenFragment;
 
+    @OnClick(R.id.open_fragment)
+    void onOpenFragmentClick(View v) {
+        getSupportFragmentManager()
+                .beginTransaction()
+                .addToBackStack(null)
+                .replace(android.R.id.content, new SampleFragment())
+                .commit();
+    }
     @OnClick(R.id.change_text)
     void onChangeTextClick(View view) {
         presenter.onChangeTextClick();

@@ -1,6 +1,6 @@
 # DaggerSample
 
-This is an example Android Application showing how to use **Dagger 2** with Android core classes such as Activity.
+This is an example Android Application showing how to use **Dagger 2** with Android core classes such as Activity or Fragment.
 
 ## Installation
 Clone this repository and import into **Android Studio**
